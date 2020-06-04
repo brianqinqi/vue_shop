@@ -28,8 +28,9 @@
         <!--Tab栏区域-->
         <el-form :model="addGoodForm" :rules="addGoodRules" ref="addGoodRef"
                  label-width="100px" label-position="top">
-          <el-tabs :tab-position="'left'" v-model="activeIndex" :before-leave="beforeTabLeave"
-          @tab-click="tabClicked">
+          <el-tabs :tab-position="'left'" v-model="activeIndex"
+                   :before-leave="beforeTabLeave"
+                    @tab-click="tabClicked">
             <el-tab-pane label="基本信息" name="0">
               <el-form-item label="商品分类" prop="goods_cat">
                 <el-cascader
@@ -166,7 +167,9 @@ export default {
       }
     },
     beforeTabLeave (activeName, oldActiveName) {
-      if (oldActiveName === 0 && this.addGoodForm.goods_cat.length !== 3) {
+      console.log(oldActiveName)
+      console.log(this.addGoodForm.goods_cat.length)
+      if (oldActiveName === '0' && this.addGoodForm.goods_cat.length !== 3) {
         this.$message.error('请先选择商品分类')
         return false
       }
