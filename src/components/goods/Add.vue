@@ -167,8 +167,6 @@ export default {
       }
     },
     beforeTabLeave (activeName, oldActiveName) {
-      console.log(oldActiveName)
-      console.log(this.addGoodForm.goods_cat.length)
       if (oldActiveName === '0' && this.addGoodForm.goods_cat.length !== 3) {
         this.$message.error('请先选择商品分类')
         return false
