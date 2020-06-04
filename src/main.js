@@ -32,7 +32,7 @@ Vue.component('tree-table', TreeTable)
 
 Vue.use(VueQuillEditor)
 
-Vue.filter('dateFormat', function (date) {
+Vue.filter('git me', function (date) {
   const dt = new Date(date)
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0')
